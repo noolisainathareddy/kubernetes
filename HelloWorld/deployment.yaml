@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-k8s
+spec:
+  selector:
+    matchLabels:
+      app: helloworld-k8s
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: helloworld-k8s
+    spec:
+      containers:
+        - name: helloworld-k8s
+          image: nooli/hello-world-test-k8s:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
