@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp
+spec:
+  containers:
+    - name: webapp
+      image: nginx
+      volumeMounts:
+        - name: tmp-log
+          mountPath: /tmp
+  volumes:
+    - name: tmp-log
+      hostPath:
+        path: /tmp
+        type: Directory
