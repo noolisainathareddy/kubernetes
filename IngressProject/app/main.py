@@ -10,4 +10,4 @@ def healthcheck():
 
 @app.get("/idea")
 def idea():
-    return {"Testing ingress with this setup"}
+    return {"Testing INGRESSp with this setup"}
