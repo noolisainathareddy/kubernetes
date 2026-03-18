@@ -9,6 +9,6 @@ def health():
     return "EStore is up and running"
 
 
-@app.get("/ides")
+@app.get("/idea")
 def idea():
     return "Testing ESTORE with this setup"
