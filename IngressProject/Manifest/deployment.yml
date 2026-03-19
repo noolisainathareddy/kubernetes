@@ -1,0 +1,24 @@
+apiVersion:  apps/v1
+kind: Deployment
+metadata:
+    name: ingress-project-app
+    namespace: ingress-project-dev
+    labels:
+        env: dev
+        app: ingress-project-app
+        org: apple
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: ingress-project-app
+    template:
+        metadata:
+            labels:
+                app: ingress-project-app
+        spec:
+            containers:
+            -   name: ingress-project-app-container
+                image: nooli/ingressproject:latest
+                ports:
+                -   containerPort: 8000

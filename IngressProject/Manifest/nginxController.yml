@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx-controller-app
+    namespace: ingress-project-dev
+    labels:
+        app: nginx-controller-app
+        env: dev
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            name: nginx-controller-app
+    template:
+        metadata:
+            labels:
+                name: nginx-controller-app
+        spec:
+            containers:
+            -   name: nginx-ingress-controller
+                image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
+
+
+
+
