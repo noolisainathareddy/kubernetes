@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: nginx-ingress-resource
+    namespace: ingress-project-dev
+spec:
+    ingressClassName: nginx
+    defaultBackend:
+        service:
+            name: ingress-project-service
+            port:
+                number: 80

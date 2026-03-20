@@ -19,6 +19,7 @@ spec:
         spec:
             containers:
             -   name: ingress-project-app-container
+                imagePullPolicy: Always
                 image: nooli/ingressproject:latest
                 ports:
                 -   containerPort: 8000
